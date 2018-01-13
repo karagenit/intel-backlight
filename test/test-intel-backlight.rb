@@ -31,6 +31,9 @@ class TestBacklight < Test::Unit::TestCase
   def test_set_value_error
   end
 
-  def test_set
+  def test_set_percent
+  end
+
+  def test_get_percent
   end
 end
