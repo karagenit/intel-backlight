@@ -8,6 +8,9 @@ class TestBacklight < Test::Unit::TestCase
   end
 
   def test_set_output
+    backlight = Backlight::Settings.new
+    backlight.output = 'test/output'
+    assert_equal(backlight.output, 'test/output')
   end
 
   def test_set_output_error
