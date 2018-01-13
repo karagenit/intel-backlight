@@ -7,6 +7,14 @@ module Backlight
     attr_reader :max
     attr_reader :value
 
+    ##
+    # Initalizes a new Settings instance
+    #
+    # ==== Attributes
+    #
+    # * +output+ - The file to write the backlight value to
+    # * +max+    - The file (or numeric value) to use for the max brightness
+    #
     def initialize(output = '/sys/class/backlight/intel_backlight/brightness',
                    max = '/sys/class/backlight/intel_backlight/max_brightness')
       self.output = output
@@ -16,6 +24,13 @@ module Backlight
       # impossible to recover from a bad value being written in the file
     end
 
+    ##
+    # Sets the output file for the backlight settings
+    #
+    # ==== Attributes
+    #
+    # * +file+ - The file to write the backlight value to
+    #
     def output=(file)
       raise(ArgumentError, 'Out File Does Not Exist') unless File.exist?(file)
       @output = file

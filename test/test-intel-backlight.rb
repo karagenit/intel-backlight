@@ -4,10 +4,11 @@ require_relative '../lib/backlight.rb'
 require 'test/unit'
 
 class TestBacklight < Test::Unit::TestCase
+  # TODO: define constant for max/output file paths
   def setup
     IO.write('test/output', '0')
     IO.write('test/max', '3000')
-  end
+  end # TODO: delete these files after all tests?
 
   def test_defaults
   end
