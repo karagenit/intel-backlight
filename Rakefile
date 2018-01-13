@@ -7,17 +7,17 @@ task :build do
 end
 
 task :install do
-    sh "gem install example-" + IO.read('version.txt') + ".gem" #FIXME
+    sh "gem install intel-backlight-" + IO.read('version.txt') + ".gem"
 end
 
 task :clean do
-    sh "gem uninstall example" #FIXME
+    sh "gem uninstall intel-backlight"
     sh "rm *.gem"
 end
 
 task :test do
-    sh "rubocop lib/example" #FIXME
-    sh "./test/test-example.rb" #FIXME
+    sh "rubocop lib/intel-backlight"
+    sh "./test/test-intel-backlight.rb"
 end
 
 task :publish do
@@ -33,5 +33,5 @@ task :publish do
     sh "github_changelog_generator"
     sh "git commit -am \"Update Changelog\""
     sh "git push origin master"
-    sh "gem push example-" + IO.read('version.txt') + ".gem" #FIXME
+    sh "gem push intel-backlight-" + IO.read('version.txt') + ".gem"
 end

@@ -1,15 +1,15 @@
 Gem::Specification.new do |s|
-    s.name          = '' #FIXME
+    s.name          = 'intel-backlight'
     s.version       = IO.read('version.txt')
     s.license       = 'MIT'
-    s.summary       = '' #FIXME
-    s.description   = '' #FIXME
-    s.homepage      = 'https://github.com/karagenit/' #FIXME
+    s.summary       = 'Set Screen Brightness on Intel Laptops'
+    s.description   = 'This gem allows you to update your laptop screen backlight brightness on intel-based systems'
+    s.homepage      = 'https://github.com/karagenit/intel-backlight'
     s.author        = 'Caleb Smith'
     s.email         = 'karagenit@outlook.com'
-    s.files         = ['lib/example.rb'] #FIXME
-    s.require_paths = ['lib/', 'bin/'] #FIXME
-    s.executables   << 'example' #FIXME
+    s.files         = ['lib/backlight.rb']
+    s.require_paths = ['lib/', 'bin/']
+    s.executables   << 'backlight'
     s.platform      = Gem::Platform::RUBY
 
     s.add_development_dependency 'rubocop',                     '~> 0.49'
