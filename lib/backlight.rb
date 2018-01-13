@@ -1,10 +1,14 @@
 module Backlight
+  ##
+  # Class to edit backlight settings on intel-based systems
+  #
   class Settings
     attr_reader :output
     attr_reader :max
     attr_reader :value
 
-    def initialize(output = '/sys/class/backlight/intel_backlight/brightness', max = '/sys/class/backlight/intel_backlight/max_brightness')
+    def initialize(output = '/sys/class/backlight/intel_backlight/brightness',
+                   max = '/sys/class/backlight/intel_backlight/max_brightness')
       self.output = output
       self.max = max
       @value = IO.read(@output)
@@ -13,7 +17,7 @@ module Backlight
     end
 
     def output=(file)
-      raise(ArgumentError, 'Output File Does Not Exist') unless File.exist?(file)
+      raise(ArgumentError, 'Out File Does Not Exist') unless File.exist?(file)
       @output = file
     end
 
