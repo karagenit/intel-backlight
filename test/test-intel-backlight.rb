@@ -4,6 +4,11 @@ require_relative '../lib/backlight.rb'
 require 'test/unit'
 
 class TestBacklight < Test::Unit::TestCase
+  def setup
+    IO.write('test/output', '0')
+    IO.write('test/max', '3000')
+  end
+
   def test_defaults
   end
 
