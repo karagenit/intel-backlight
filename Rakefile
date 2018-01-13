@@ -16,7 +16,7 @@ task :clean do
 end
 
 task :test do
-    sh "rubocop lib/intel-backlight"
+    sh "rubocop lib/backlight.rb"
 end
 
 task :publish do
