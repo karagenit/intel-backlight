@@ -19,7 +19,7 @@ module Backlight
                    max = '/sys/class/backlight/intel_backlight/max_brightness')
       self.output = output
       self.max = max
-      @value = IO.read(@output)
+      @value = IO.read(@output).to_i
       # NOTE: we don't call self.value= here, because this would make it
       # impossible to recover from a bad value being written in the file
     end
