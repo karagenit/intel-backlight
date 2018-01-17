@@ -36,6 +36,14 @@ module Backlight
       @output = file
     end
 
+    ##
+    # Sets the maximum brightness value of the backlight.
+    #
+    # ==== Attributes
+    #
+    # * +max+ - This can either be the filename to read the max from, or a
+    #           numeric maximum value.
+    #
     def max=(max)
       if max.is_a? Numeric
         raise(ArgumentError, 'Max Brightness Cannot Be Less Than 0') if max < 0
@@ -48,6 +56,13 @@ module Backlight
       end
     end
 
+    ##
+    # Sets the value of the backlight, from zero to the set maximum
+    #
+    # ==== Attributes
+    #
+    # * +value+ - The value to set to the backlight output file
+    #
     def value=(value)
       value = value.to_i
       raise(ArgumentError, 'Invalid Value') if value < 0 || value > @max
@@ -55,10 +70,16 @@ module Backlight
       @value = value
     end
 
+    ##
+    # Sets the backlight brightness as a percentage
+    #
     def set(percent)
       self.value = percent * @max / 100
     end
 
+    ##
+    # Gets the backlight brightness as a percentage
+    #
     def get
       100 * @value / @max
     end
