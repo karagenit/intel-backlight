@@ -57,7 +57,9 @@ module Backlight
     end
 
     ##
-    # Sets the value of the backlight, from zero to the set maximum
+    # Sets the value of the backlight, from zero to the set maximum. Should
+    # be given in integer form - Strings will be converted, floats will be
+    # truncated.
     #
     # ==== Attributes
     #
@@ -71,17 +73,17 @@ module Backlight
     end
 
     ##
-    # Sets the backlight brightness as a percentage
+    # Sets the backlight brightness as a percentage.
     #
     def set(percent)
-      self.value = percent * @max / 100
+      self.value = (percent * @max / 100.0).round
     end
 
     ##
-    # Gets the backlight brightness as a percentage
+    # Gets the backlight brightness as a percentage.
     #
     def get
-      100 * @value / @max
+      (100.0 * @value / @max).round
     end
   end
 end
