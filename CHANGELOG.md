@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.1](https://github.com/karagenit/intel-backlight/tree/v1.0.1) (2018-01-18)
+[Full Changelog](https://github.com/karagenit/intel-backlight/compare/v1.0.0...v1.0.1)
+
+**Closed issues:**
+
+- Handle Argument Errors in Executable [\#4](https://github.com/karagenit/intel-backlight/issues/4)
+
 ## [v1.0.0](https://github.com/karagenit/intel-backlight/tree/v1.0.0) (2018-01-17)
 
 
