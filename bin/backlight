@@ -2,6 +2,12 @@
 
 require 'backlight'
 
+def safe_set(config, value)
+    value = 100 if value > 100
+    value = 0 if value < 0
+    config.set(value)
+end
+
 config = Backlight::Settings.new
 
 cmd = ARGV[0]
@@ -11,7 +17,7 @@ if cmd.nil? || cmd.empty?
 elsif cmd == "help" || cmd == "--help" || cmd == "-h"
     puts "Usage: backlight [+/-][PERCENT]"
 elsif cmd[0] == "+" || cmd[0] == "-"
-    config.set(config.get + cmd.to_i)
+    safe_set(config, config.get + cmd.to_i)
 else
-    config.set cmd.to_i
+    safe_set(config, cmd.to_i)
 end
